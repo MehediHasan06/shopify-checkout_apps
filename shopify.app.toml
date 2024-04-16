@@ -1,3 +1,28 @@
-# This file stores configurations for your Shopify app.
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-scopes = "write_products"
+client_id = "4030f45d0ed3af3480ea3ce3497fcbe9"
+name = "delivery-date-picker"
+handle = "delivery-date-picker-99"
+application_url = "https://outdoors-healthcare-knew-classics.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "lumenshopbd.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
+[auth]
+redirect_urls = [
+  "https://outdoors-healthcare-knew-classics.trycloudflare.com/auth/callback",
+  "https://outdoors-healthcare-knew-classics.trycloudflare.com/auth/shopify/callback",
+  "https://outdoors-healthcare-knew-classics.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false

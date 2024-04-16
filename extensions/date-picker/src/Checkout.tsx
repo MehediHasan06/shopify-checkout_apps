@@ -1,12 +1,12 @@
 import {
   Banner,
+  reactExtension,
   useApi,
   useTranslate,
-  reactExtension,
-} from '@shopify/ui-extensions-react/checkout';
+} from '@shopify/ui-extensions-react/checkout'
 
 export default reactExtension(
-  'purchase.checkout.block.render',
+  'purchase.checkout.shipping-option-list.render-after',
   () => <Extension />,
 );
 

@@ -19501,7 +19501,7 @@ ${errorInfo.componentStack}`);
   // extensions/date-picker/src/Checkout.tsx
   var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   var Checkout_default = reactExtension(
-    "purchase.checkout.block.render",
+    "purchase.checkout.shipping-option-list.render-after",
     () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Extension, {})
   );
   function Extension() {
