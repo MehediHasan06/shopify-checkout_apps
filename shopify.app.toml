@@ -3,7 +3,7 @@
 client_id = "4030f45d0ed3af3480ea3ce3497fcbe9"
 name = "delivery-date-picker"
 handle = "delivery-date-picker-99"
-application_url = "https://outdoors-healthcare-knew-classics.trycloudflare.com"
+application_url = "https://forwarding-photographers-supplemental-jurisdiction.trycloudflare.com"
 embedded = true
 
 [build]
@@ -16,9 +16,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://outdoors-healthcare-knew-classics.trycloudflare.com/auth/callback",
-  "https://outdoors-healthcare-knew-classics.trycloudflare.com/auth/shopify/callback",
-  "https://outdoors-healthcare-knew-classics.trycloudflare.com/api/auth/callback"
+  "https://forwarding-photographers-supplemental-jurisdiction.trycloudflare.com/auth/callback",
+  "https://forwarding-photographers-supplemental-jurisdiction.trycloudflare.com/auth/shopify/callback",
+  "https://forwarding-photographers-supplemental-jurisdiction.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

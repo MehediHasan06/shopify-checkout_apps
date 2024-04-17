@@ -7,15 +7,15 @@ api_version = "2024-04"
 
 [[extensions]]
 type = "ui_extension"
-name = "date-picker"
-handle = "date-picker"
+name = "delivery-date-picker"
+handle = "delivery-date-picker"
 
 # Controls where in Shopify your extension will be injected,
 # and the file that contains your extension’s source code. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
 
 [[extensions.targeting]]
-module = "./src/Checkout.tsx"
+module = "./src/Checkout.jsx"
 target = "purchase.checkout.shipping-option-list.render-after"
 
 [extensions.capabilities]
@@ -32,9 +32,9 @@ api_access = true
 # products, customers, and more. Learn more:
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
 
-# [[extensions.metafields]]
-# namespace = "my_namespace"
-# key = "my_key"
+[[extensions.metafields]]
+namespace = "delivery"
+key = "delivery_date"
 # [[extensions.metafields]]
 # namespace = "my_namespace"
 # key = "my_other_key"
