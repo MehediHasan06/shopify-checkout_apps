@@ -1,11 +1,13 @@
 import {
   BlockSpacer,
+  Checkbox,
   DatePicker,
   Text,
   reactExtension,
   useApplyMetafieldsChange,
   useMetafield,
 } from "@shopify/ui-extensions-react/checkout";
+import { useState } from "react";
 import * as metafields from "./constants/metafields";
 import { getDisabledDateRange, getFirstAvailableDate } from "./utils/utils";
 
@@ -35,16 +37,40 @@ function App() {
     });
   };
 
+  // Handle when a buyer checks the checkbox
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const handleCheckboxChange = (isChecked) => {
+    setShowDatePicker(isChecked);
+    if (!isChecked) {
+      console.log("inside to remove the metafield---");
+      updateMetafield({
+        type: "removeMetafield",
+        namespace: metafields.SHIPPING_METAFIELD_NAMESPACE,
+        key: metafields.SHIPPING_METAFIELD_KEY,
+      });
+    }
+  };
   return (
     <>
-      <BlockSpacer spacing="loose" />
-      <Text size="medium">Select a date for delivery</Text>
+      <Text size="medium" emphasis="bold">
+        Want your order delivered a specific date?
+      </Text>
+      <Checkbox
+        id="showDatePicker"
+        name="showDatePicker"
+        checked={showDatePicker}
+        onChange={handleCheckboxChange}
+      >
+        Select a target delivery date.
+      </Checkbox>
       <BlockSpacer spacing="extraLoose" />
-      <DatePicker
-        selected={deliveryDate?.value || initialAvailableDay}
-        onChange={handleDateChange}
-        disabled={disabledDateRanges}
-      />
+      {showDatePicker && (
+        <DatePicker
+          selected={deliveryDate?.value || initialAvailableDay}
+          onChange={handleDateChange}
+          disabled={disabledDateRanges}
+        />
+      )}
     </>
   );
 }
