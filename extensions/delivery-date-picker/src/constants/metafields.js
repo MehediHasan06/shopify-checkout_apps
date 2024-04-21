@@ -1,0 +1,5 @@
+const SHIPPING_METAFIELD_NAMESPACE = "shipping";
+const SHIPPING_METAFIELD_KEY = "requested_shipping_date";
+
+export { SHIPPING_METAFIELD_KEY, SHIPPING_METAFIELD_NAMESPACE }
+

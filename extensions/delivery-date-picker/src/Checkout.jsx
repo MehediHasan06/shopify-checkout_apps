@@ -6,6 +6,7 @@ import {
   useApplyMetafieldsChange,
   useMetafield,
 } from "@shopify/ui-extensions-react/checkout";
+import * as metafields from "./constants/metafields";
 import { getDisabledDateRange, getFirstAvailableDate } from "./utils/utils";
 
 export default reactExtension(
@@ -18,8 +19,8 @@ function App() {
   const lastDisabledDay = disabledDateRanges[0].end;
   const initialAvailableDay = getFirstAvailableDate(lastDisabledDay);
   const deliveryDate = useMetafield({
-    namespace: "delivery",
-    key: "delivery_date",
+    namespace: metafields.SHIPPING_METAFIELD_NAMESPACE,
+    key: metafields.SHIPPING_METAFIELD_KEY,
   });
 
   // Handle when a buyer selects a new date
@@ -27,8 +28,8 @@ function App() {
   const handleDateChange = (newSelectedDate) => {
     updateMetafield({
       type: "updateMetafield",
-      namespace: "delivery",
-      key: "delivery_date",
+      namespace: metafields.SHIPPING_METAFIELD_NAMESPACE,
+      key: metafields.SHIPPING_METAFIELD_KEY,
       value: newSelectedDate,
       valueType: "string",
     });

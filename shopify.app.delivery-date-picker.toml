@@ -3,7 +3,7 @@
 client_id = "40bd821ed8be807837fc09447f5ae188"
 name = "Delivery Date Picker"
 handle = "delivery-date-picker-66"
-application_url = "https://compaq-tracy-developer-rice.trycloudflare.com"
+application_url = "https://craft-fitness-nails-oil.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://compaq-tracy-developer-rice.trycloudflare.com/auth/callback",
-  "https://compaq-tracy-developer-rice.trycloudflare.com/auth/shopify/callback",
-  "https://compaq-tracy-developer-rice.trycloudflare.com/api/auth/callback"
+  "https://craft-fitness-nails-oil.trycloudflare.com/auth/callback",
+  "https://craft-fitness-nails-oil.trycloudflare.com/auth/shopify/callback",
+  "https://craft-fitness-nails-oil.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
