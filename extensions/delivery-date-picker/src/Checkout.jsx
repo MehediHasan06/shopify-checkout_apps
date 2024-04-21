@@ -6,8 +6,7 @@ import {
   useApplyMetafieldsChange,
   useMetafield,
 } from "@shopify/ui-extensions-react/checkout";
-import { useState } from "react";
-import { getDisabledDateRange } from "./utils/utils";
+import { getDisabledDateRange, getFirstAvailableDate } from "./utils/utils";
 
 export default reactExtension(
   "purchase.checkout.shipping-option-list.render-after",
@@ -15,15 +14,25 @@ export default reactExtension(
 );
 
 function App() {
-  // make upto x days to the future disabled from the past
-  const disabledDateRanges = getDisabledDateRange(3);
-  const { selectedDate, setSelectedDate } = useState();
-
+  const disabledDateRanges = getDisabledDateRange(3); // make upto x days to the future disabled, from the past
+  const lastDisabledDay = disabledDateRanges[0].end;
+  const initialAvailableDay = getFirstAvailableDate(lastDisabledDay);
   const deliveryDate = useMetafield({
     namespace: "delivery",
     key: "delivery_date",
   });
-  const setDeliveryDate = useApplyMetafieldsChange();
+
+  // Handle when a buyer selects a new date
+  const updateMetafield = useApplyMetafieldsChange();
+  const handleDateChange = (newSelectedDate) => {
+    updateMetafield({
+      type: "updateMetafield",
+      namespace: "delivery",
+      key: "delivery_date",
+      value: newSelectedDate,
+      valueType: "string",
+    });
+  };
 
   return (
     <>
@@ -31,16 +40,8 @@ function App() {
       <Text size="medium">Select a date for delivery</Text>
       <BlockSpacer spacing="extraLoose" />
       <DatePicker
-        selected={deliveryDate?.value}
-        onChange={(value) => {
-          setDeliveryDate({
-            type: "updateMetafield",
-            namespace: "delivery",
-            key: "delivery_date",
-            value,
-            valueType: "string",
-          });
-        }}
+        selected={deliveryDate?.value || initialAvailableDay}
+        onChange={handleDateChange}
         disabled={disabledDateRanges}
       />
     </>
