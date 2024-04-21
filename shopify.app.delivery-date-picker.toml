@@ -3,7 +3,7 @@
 client_id = "40bd821ed8be807837fc09447f5ae188"
 name = "Delivery Date Picker"
 handle = "delivery-date-picker-66"
-application_url = "https://packing-sheffield-mx-annotated.trycloudflare.com"
+application_url = "https://compaq-tracy-developer-rice.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://packing-sheffield-mx-annotated.trycloudflare.com/auth/callback",
-  "https://packing-sheffield-mx-annotated.trycloudflare.com/auth/shopify/callback",
-  "https://packing-sheffield-mx-annotated.trycloudflare.com/api/auth/callback"
+  "https://compaq-tracy-developer-rice.trycloudflare.com/auth/callback",
+  "https://compaq-tracy-developer-rice.trycloudflare.com/auth/shopify/callback",
+  "https://compaq-tracy-developer-rice.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

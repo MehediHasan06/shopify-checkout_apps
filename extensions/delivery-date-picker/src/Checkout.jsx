@@ -6,7 +6,8 @@ import {
   useApplyMetafieldsChange,
   useMetafield,
 } from "@shopify/ui-extensions-react/checkout";
-import { getDisabledDateRange } from "./utils/dateFormatter";
+import { useState } from "react";
+import { getDisabledDateRange } from "./utils/utils";
 
 export default reactExtension(
   "purchase.checkout.shipping-option-list.render-after",
@@ -14,8 +15,9 @@ export default reactExtension(
 );
 
 function App() {
-  // make x days to the future disabled
+  // make upto x days to the future disabled from the past
   const disabledDateRanges = getDisabledDateRange(3);
+  const { selectedDate, setSelectedDate } = useState();
 
   const deliveryDate = useMetafield({
     namespace: "delivery",
