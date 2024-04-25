@@ -3,7 +3,7 @@
 client_id = "40bd821ed8be807837fc09447f5ae188"
 name = "Delivery Date Picker"
 handle = "delivery-date-picker-66"
-application_url = "https://zus-injured-inquire-parker.trycloudflare.com"
+application_url = "https://rise-mesh-adopt-preston.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://zus-injured-inquire-parker.trycloudflare.com/auth/callback",
-  "https://zus-injured-inquire-parker.trycloudflare.com/auth/shopify/callback",
-  "https://zus-injured-inquire-parker.trycloudflare.com/api/auth/callback"
+  "https://rise-mesh-adopt-preston.trycloudflare.com/auth/callback",
+  "https://rise-mesh-adopt-preston.trycloudflare.com/auth/shopify/callback",
+  "https://rise-mesh-adopt-preston.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
