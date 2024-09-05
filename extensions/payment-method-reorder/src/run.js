@@ -29,6 +29,9 @@ export function run(input) {
   // }
 
   // Find the payment method to hide
+  //Bank Deposit
+  //Cash on Delivery
+
   const targetPaymentMethod = input.paymentMethods
     .find(method => method.name.includes("Bank Deposit"));
 
@@ -45,7 +48,7 @@ export function run(input) {
       //   paymentMethodId: hidePaymentMethod.id
       // }
       move: {
-        index: 0,
+        index: 3,
         paymentMethodId: targetPaymentMethod.id
       }
     }]
