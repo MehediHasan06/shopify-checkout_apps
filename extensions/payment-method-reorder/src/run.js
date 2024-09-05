@@ -20,20 +20,17 @@ const NO_CHANGES = {
 * @returns {FunctionRunResult}
 */
 export function run(input) {
-  // Get the cart total from the function input, and return early if it's below 100
-  // const cartTotal = parseFloat(input.cart.cost.totalAmount.amount ?? "0.0");
-  // if (cartTotal < 100) {
-  //   // You can use STDERR for debug logs in your function
-  //   console.error("Cart total is not high enough, no need to hide the payment method.");
-  //   return NO_CHANGES;
-  // }
 
+<<<<<<< HEAD
   // Find the payment method to hide
   //Bank Deposit
   //Cash on Delivery
 
+=======
+  // Find the payment method to reorder
+>>>>>>> b339b3523cb0d66cfec32d280c66d118269e88db
   const targetPaymentMethod = input.paymentMethods
-    .find(method => method.name.includes("Bank Deposit"));
+    .find(method => method.name.includes("Cash on Delivery"));
 
   if (!targetPaymentMethod) {
     console.error('No method found as the targetPaymentMethod', targetPaymentMethod)
@@ -44,9 +41,6 @@ export function run(input) {
   // and writes it to STDOUT
   return {
     operations: [{
-      // hide: {
-      //   paymentMethodId: hidePaymentMethod.id
-      // }
       move: {
         index: 3,
         paymentMethodId: targetPaymentMethod.id

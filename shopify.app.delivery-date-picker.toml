@@ -3,7 +3,11 @@
 client_id = "40bd821ed8be807837fc09447f5ae188"
 name = "Delivery Date Picker"
 handle = "delivery-date-picker-66"
+<<<<<<< HEAD
 application_url = "https://flame-supreme-gradually-opening.trycloudflare.com"
+=======
+application_url = "https://reviewing-ja-log-tunes.trycloudflare.com"
+>>>>>>> b339b3523cb0d66cfec32d280c66d118269e88db
 embedded = true
 
 [build]
@@ -17,9 +21,15 @@ scopes = ""
 
 [auth]
 redirect_urls = [
+<<<<<<< HEAD
   "https://flame-supreme-gradually-opening.trycloudflare.com/auth/callback",
   "https://flame-supreme-gradually-opening.trycloudflare.com/auth/shopify/callback",
   "https://flame-supreme-gradually-opening.trycloudflare.com/api/auth/callback"
+=======
+  "https://reviewing-ja-log-tunes.trycloudflare.com/auth/callback",
+  "https://reviewing-ja-log-tunes.trycloudflare.com/auth/shopify/callback",
+  "https://reviewing-ja-log-tunes.trycloudflare.com/api/auth/callback"
+>>>>>>> b339b3523cb0d66cfec32d280c66d118269e88db
 ]
 
 [webhooks]
